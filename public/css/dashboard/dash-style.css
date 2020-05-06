@@ -1,0 +1,260 @@
+/*** GENERAL ***/
+.main-panel {
+    border: none;
+}
+
+.main-panel .lang-select-zone {
+    display: flex;
+    align-items: center;
+}
+.main-panel .lang-select-zone img {
+    border-radius: 4px;
+    width: 31px;
+    height: 20px;
+}
+.main-panel .lang-select img,
+.main-panel .lang-select {
+    width: 31px;
+    height: 20px;
+}
+.main-panel .lang-select {
+    display: block;
+}
+
+@media (max-width: 991.98px) {
+    .lang-select-zone {
+        flex-direction: column;
+        align-items: unset !important;
+    }
+}
+
+.table-responsive {
+    overflow: auto !important;
+}
+
+/* form */
+textarea {
+    resize: vertical !important;
+    height: 100px;
+    max-height: unset !important;
+    min-height: 50px;
+}
+
+.card form label + .form-control {
+    margin-bottom: 10px;
+}
+
+.form-control {
+    height: unset;
+}
+
+/** Alerts **/
+.alert.alert-warning {
+    background: #fda924;
+}
+
+/*** SIDE BAR ***/
+.sidebar-wrapper {
+    overflow: visible !important;
+}
+.sidebar-go-top {
+    position: absolute;
+    top: -4rem;
+    width: 100%;
+    text-align: center;
+    color: #fff !important;
+    font-size: 1.1rem;
+
+}
+
+/*** SIDEBAR ***/
+.sidebar .divider {
+    height: 1px;
+    background: rgba(255,255,255,0.4);
+    width: 80%;
+    margin: .7rem auto;
+}
+
+/*** FOOTER ***/
+footer {
+    background: transparent;
+}
+
+/*** SETTINGS SAVER ***/
+#settings-saver {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    width: 100vw;
+    padding: .5rem 1.5rem;
+    z-index: 66642;
+    color: #fff;
+    background: #23272a;
+    box-shadow: 0px -2px 10px 0px #171a1c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+    transition: transform .5s ease-in-out;
+}
+#settings-saver p {
+    margin: 0 2rem 0 0;
+}
+#save-settings {
+    padding: .7rem 1.5rem;
+}
+
+/*** DASHBOARD / PROFILE ***/
+.author .avatar {
+    border: none;
+}
+
+#delete-account {
+    color: #ff3c1a;
+    cursor: pointer;
+}
+#delete-account:hover {
+    text-decoration: underline;
+}
+#deleteModal .form-check .form-check-sign:after {
+    content: "✓";
+}
+
+/* 2fa */
+#zone-2fa {
+    display: none;
+    text-align: center;
+}
+#zone-2fa img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: .5rem;
+}
+#secret-code-2fa {
+    font-weight: 700;
+}
+#zone-2fa .list-nb {
+    font-weight: 500;
+    color: #fff;
+}
+
+#recover-codes-2fa {
+    display: none;
+    text-align: center;
+}
+
+.enabled-2fa {
+    color: #fff;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+
+/*** SERVERS ***/
+.added-servers a span.server-name {
+    color: #5e77d4;
+    font-weight: normal;
+    transition: all .3s;
+    margin-top: .5rem;
+}
+.added-servers a:hover span.server-name {
+    color: #3656c9;
+    font-weight: normal;
+}
+
+
+.server-thumbnail {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.server-thumbnail > img {
+    margin-bottom: .5rem;
+    -webkit-border-radius: 8rem;
+    -moz-border-radius: 8rem;
+    border-radius: 8rem;
+}
+.srv-fake-logo {
+    width: 64px;
+    height: 64px;
+    background: #36393f;
+    border-radius: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.srv-fake-logo span {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 1;
+
+}
+.server-thumbnail .server-name {
+    font-weight: bold;
+    color: #ccc;
+}
+
+
+/*** CONFIGURATION ***/
+.configs-box {
+    padding: .5rem 1.5rem;
+}
+
+.config-cat-container {
+    margin-bottom: 1.5rem;
+}
+
+.config-cat {
+    padding: 1rem .5rem;
+    margin: 0;
+    border-radius: 1rem;
+    background-color: #1e1e2a;
+    align-items: center;
+}
+.config-cat:hover {
+    background-color: #21212e;
+}
+
+.config-cat img,
+.config-cat-name {
+    display: inline-block;
+}
+
+.config-cat-name {
+    font-size: 1.3rem;
+    color: #eee;
+    text-transform: uppercase;
+}
+
+.settings-parent label {
+    font-size: 1rem;
+    cursor: text;
+}
+.settings-parent .form-control {
+    font-size: .9rem;
+}
+.settings-parent select {
+    cursor: pointer;
+}
+.settings-parent select[multiple] {
+    padding: 0;
+}
+.settings-parent select[multiple] option {
+    padding: .4rem .5rem;
+}
+
+@media (min-width: 992px){
+    .config-cat-name {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1400px){
+    .config-cat-name {
+        font-size: 1.2rem;
+    }
+}
+
