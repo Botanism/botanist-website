@@ -1,0 +1,1 @@
+If you want to contribute that would be awesome! We would love that! This project has only gotten there because of those various contributions. And there are as many ways to contribute as contributors! Don't be shy and come join us!
