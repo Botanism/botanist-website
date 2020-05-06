@@ -1,5 +1,8 @@
 *
+
 !public/
 !.gitignore
 !doc/
+!doc/**
 !langs/
+!langs/**

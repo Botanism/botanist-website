@@ -1,0 +1,12 @@
+{
+    "navbar_home": "Home",
+    "navbar_faq": "FAQ",
+    "navbar_doc": "Doc",
+    "modularity": "Modularity",
+
+    "footer_license": "<span class='copyleft'>&copy;</span> This website is under license GPL 3 and is available on <a href='https://github.com' target='_blank'><i class='fab fa-github'></i></a>",
+    "footer_author": "Made with <i class='fab fa-linux'></i> & <i class='fas fa-heart'></i> by <a href='' target='_blank'>Adrien Luitot</a>",
+    "lang_bad_format": "The language is not well formated. It should be like that: xx.",
+    "lang_not_supported": "The language is not supported.",
+    "lang_changed_successfully": "The language has been successfully changed!"
+}
