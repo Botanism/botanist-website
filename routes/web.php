@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use \App\Http\Middleware\ServerProperty;
+use \App\Http\Middleware\CheckToken;
 
 View::composer('*', function ($view) {
     $view->with('Lang', new \App\Http\Controllers\LangController());
@@ -35,7 +36,7 @@ Route::get('/lost-password', 'UserController@lastPassword')->name('lost_password
 
 Route::get('/logout', 'UserController@logout')->name('logout');
 
-Route::group(['prefix' => '/dashboard', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'check_token']], function () {
     View::composer('*', function ($view) {
         $view->with('discordUser', (new \App\Http\Controllers\DiscordController)->getDiscordInfos());
     });
@@ -48,12 +49,12 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'auth'], function () {
     Route::post('/', 'UserController@updateProfile')->name('update_profile');
     Route::post('/updatepass', 'UserController@updatePassword')->name('update_password');
 
+
     Route::get('/servers', 'UserController@servers')->name('servers');
     Route::post('/servers', 'UserController@addServer')->name('add_server');
     Route::get('/added_server', 'UserController@addedServer')->name('added_server');
 
-
-    Route::group(['prefix' => '/servers/{id}', 'middleware' => ServerProperty::class], function () {
+    Route::group(['prefix' => '/servers/{id}', 'middleware' => [ServerProperty::class]], function () {
         Route::get('/', 'UserController@editServer')->name('edit_server');
         Route::get('/general', 'UserController@editServerGeneral')->name('server_conf_general');
         Route::get('/moderation', 'UserController@editServerModeration')->name('server_conf_moderation');

@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->string('secret_2fa', 32)->nullable();
             $table->string('access_token', 255)->nullable();
+            $table->string('refresh_token', 255)->nullable();
             $table->timestamps();
         });
     }

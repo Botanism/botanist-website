@@ -17,7 +17,6 @@ class ServerProperty
 
         $ownerId = $server->first()->user_id;
 
-
         if ($ownerId != Auth::id()) {
             return redirect(route('servers'));
         }

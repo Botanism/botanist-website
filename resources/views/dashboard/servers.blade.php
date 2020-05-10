@@ -28,6 +28,7 @@
                 <div class="alert alert-info"><span>{{$Lang->get('dashboard_no_server_bot')}}</span></div>
             @endif
             @foreach($myServers as $myServer)
+                <?php if(!isset($servers[$myServer->server_id])) continue; ?>
                 <a href="{{route('edit_server', $myServer->id)}}" class="col-lg-2 col-md-3 col-sm-4 col-6 server-thumbnail">
                     @if($servers[$myServer->server_id]->icon)
                         <img src="https://cdn.discordapp.com/icons/{{$myServer->server_id}}/{{$servers[$myServer->server_id]->icon}}.png?size=64">

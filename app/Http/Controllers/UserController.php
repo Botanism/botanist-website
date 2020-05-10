@@ -111,6 +111,7 @@ class UserController
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'access_token' => null,
+            'refresh_token' => null,
             'created_at' => Carbon::now(),
             'updated_at' => null
         ]);

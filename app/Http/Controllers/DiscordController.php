@@ -12,7 +12,6 @@ class DiscordController
 
     private $OAuth2ClientId, $OAuth2ClientSecret, $botPrivateToken;
 
-    private $authUrl = "https://discordapp.com/api/oauth2/authorize";
     private $tokenUrl = "https://discordapp.com/api/oauth2/token";
 
     public $apiBaseUrl = "https://discordapp.com/api/users/@me";
@@ -23,20 +22,6 @@ class DiscordController
         $this->OAuth2ClientSecret = env("BOTANIST_OAUTH_CLIENT_SECRET"); //TODO : HIDE IT !!!!!!!!!!!!!
         $this->botPrivateToken = env("BOTANIST_PRIVATE_TOKEN"); //TODO : HIDE ME !!!!!!!!!!!!!!!!
     }
-
-
-//    public function getDiscordCode() {
-//        $params = [
-//            'client_id' => $this->OAuth2ClientId,
-//            'redirect_uri' => 'http://localhost:8000/discord_login',
-//            'response_type' => 'code',
-//            'scope' => 'identify guilds'
-//        ];
-//
-//        $return = file_get_contents($this->authUrl . '?' . http_build_query($params));
-//        return $return;
-//    }
-
 
     public function discordApiCall ($url, $code=false, $token=false, $isBot=false) {
         $headers = ['Accept: application/json'];
@@ -76,6 +61,7 @@ class DiscordController
         }
 
         $token = $discordGet->access_token;
+        $refreshToken = $discordGet->refresh_token;
 
         $user = json_decode($this->discordApiCall($this->apiBaseUrl, false, $token));
 
@@ -87,7 +73,7 @@ class DiscordController
                 return redirect()->to(route('dashboard'));
             }
 
-            $dbUser->update(['access_token' => $token]);
+            $dbUser->update(['access_token' => $token, 'refresh_token' => $refreshToken]);
             if (empty($dbUser->first()->secret_2fa)) {
                 Auth::loginUsingId($dbUser->first()->id);
                 return redirect()->to(route('dashboard'));
@@ -99,7 +85,8 @@ class DiscordController
             if(Auth::check()) {
                 (new User())->where('id', '=', Auth::id())->update([
                     'discord_id' => $user->id,
-                    'access_token' => $token
+                    'access_token' => $token,
+                    'refresh_token' => $refreshToken
                 ]);
                 session()->flash('discord_account_successfully_linked', true);
                 return redirect()->to(route('dashboard'));
@@ -110,6 +97,7 @@ class DiscordController
                     'email' => null,
                     'password' => null,
                     'access_token' => $token,
+                    'refresh_token' => $refreshToken,
                     'created_at' => Carbon::now(),
                     'updated_at' => null
                 ]);
