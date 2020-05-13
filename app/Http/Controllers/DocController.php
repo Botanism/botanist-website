@@ -29,6 +29,10 @@ class DocController
         return view('doc', ['Doc' => $this, 'state' => 200, 'file' => $file, 'dirs' => explode("/", $dirs), 'nav' => $this->getNavTree()]);
     }
 
+    private function priorityOrder ($a, $b) {
+        return ($a["priority"] <= $b['priority'])? -1 : 1;
+    }
+
     private function scan_dir($url) {
         $elems = scandir($url);
         unset($elems[0], $elems[1]);
@@ -53,17 +57,18 @@ class DocController
                     unset($dirs[$elem]);
                     continue;
                 }
-                if(isset($pageInfo['title'])) {
-                    $title = $pageInfo['title'];
-                } else {
-                    $title = ucwords(preg_replace('#_#', ' ', $elem));
-                }
+
+                $title = $pageInfo['title'] ?? ucwords(preg_replace('#_#', ' ', $elem));
+                $dirs[$elem]["priority"] = $pageInfo['priority'] ?? 99;
             } else {
                 $title = ucwords(preg_replace('#_#', ' ', $elem));
+                $dirs[$elem]["priority"] = 99;
             }
 
             $dirs[$elem]["title"] = $title;
         }
+
+        uasort($dirs, [$this, "priorityOrder"]);
 
         return $dirs;
     }

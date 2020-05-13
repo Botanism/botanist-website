@@ -91,8 +91,9 @@ b {
 }
 code {
     background-color: #23272a;
-    padding: .2rem .1rem;
+    padding: .25rem .45rem;
     font-family: 'Anonimous Pro';
+    border-radius: .2rem;
 }
 
 
@@ -654,23 +655,87 @@ header a.active {
     color: #eee;
 }
 
-.doc-container h1, h2, h3, h4, h5, h6 { line-height: 1.2; }
+.doc-container h1, .doc-container h2, .doc-container h3, .doc-container h4, .doc-container h5, .doc-container h6 {
+    position: relative;
+    line-height: 1.2;
+}
+.doc-container h1:before,
+.doc-container h2:before,
+.doc-container h3:before,
+.doc-container h4:before,
+.doc-container h5:before,
+.doc-container h6:before {
+    content: "#";
+    position: absolute;
+    left: -15px;
+    color: #595D63;
+    font-size: 85%;
+    transform: translateX(-50%);
+    line-height: 1.45;
+}
+
+.doc-container h1:not(:nth-child(2)) {
+    margin-top: 1.8rem;
+}
 .doc-container h1 {
-    font-size: 2.7rem;
+    font-size: 2.8rem;
     margin-bottom: 0;
 }
 .doc-container h2 {
-    font-size: 2rem;
+    font-size: 1.9rem;
     margin: 2rem 0 0 0;
 }
 .doc-container h3 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     margin: 1rem 0 .5rem 0;
 }
 
+.doc-container .code-toolbar {
+    margin: .8rem 0;
+}
 .doc-container pre {
     margin: 0;
 }
+
+.doc-container table {
+    color: #eee;
+    border-spacing: 0;
+    margin: 1rem 0;
+}
+.doc-container table thead th {
+    background: #23272a;
+    padding: .8rem 1.6rem;
+}
+.doc-container table thead th:first-child {
+    border-top-left-radius: .5rem;
+}
+.doc-container table thead th:last-child {
+    border-top-right-radius: .5rem;
+}
+.doc-container table tbody tr:nth-child(2n+1) td {
+    background: #373a3f;
+}
+.doc-container table tbody tr:nth-child(2n) td {
+    background: #2f3337;
+}
+.doc-container table tbody tr td {
+    padding: .8rem;
+    border-right: 1px solid #23272a;
+    border-bottom: 1px solid #23272a;
+}
+.doc-container table tbody tr:last-child td {
+    border-bottom: none;
+}
+.doc-container table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: .5rem;
+}
+.doc-container table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: .5rem;
+    border-left: none;
+}
+
+
+
 
 .doc-404 {
     width: 100%;

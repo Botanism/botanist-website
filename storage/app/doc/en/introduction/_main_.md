@@ -1,3 +1,6 @@
+title: Introduction
+priority: 1
+[----]
 ## Botanist
 Welcome all! This is the documentation section of Botanist. This program is a Discord bot which is basically a plug-in to the real time messaging platform. It is built using discord.py API which offers full compatibility to the official Discord API.
 

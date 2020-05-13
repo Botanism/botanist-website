@@ -1,3 +1,5 @@
+priority: 2
+[----]
 A suite of commands always activated which handle extension management. This cannot be unloaded as it is part of the core of the bot and is required for live updates.
 
 | Group | Command  |   Arguments   |                         Description                          | Clearance |
