@@ -203,6 +203,12 @@ footer {
     padding: .5rem 1.5rem;
 }
 
+#remove-server {
+    color: #ff3c1a;
+    cursor: pointer;
+}
+#remove-server:hover { text-decoration: underline; }
+
 .config-cat-container {
     margin-bottom: 1.5rem;
 }

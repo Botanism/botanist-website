@@ -60,6 +60,8 @@ Route::group(['prefix' => '/dashboard', 'middleware' => ['auth', 'check_token']]
         Route::get('/moderation', 'UserController@editServerModeration')->name('server_conf_moderation');
 
         Route::post('/update_conf', 'UserController@updateConfiguration');
+
+        Route::get('/remove', 'UserController@removeServer')->name('server_conf_remove_server');
     });
 
 

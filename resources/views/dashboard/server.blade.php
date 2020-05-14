@@ -33,6 +33,32 @@
                     </a>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <a id="remove-server" data-toggle="modal" data-target="#remove-server-modal">{{$Lang->get('dashboard_conf_remove_server')}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="remove-server-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{$Lang->get('dashboard_conf_remove_server')}}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {!! $Lang->get('dashboard_conf_remove_server_warning') !!}
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{$Lang->get('cancel')}}</button>
+                    <a href="{{route('server_conf_remove_server', $srvId)}}" class="btn btn-danger">{{$Lang->get('remove')}}</a>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

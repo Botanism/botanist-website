@@ -29,6 +29,8 @@
     "form_save": "Enregistrer",
     "form_add": "Ajouter",
     "validate": "Valider",
+    "cancel": "Annuler",
+    "remove": "Enlever",
     "language": "Langue",
     "messages": "Messages",
     "disabled": "Désactivé",
@@ -121,6 +123,7 @@
     "dashboard_bot_not_on_server": "Le bot n'est pas sur le serveur.",
     "dashboard_user_not_on_server": "Vous n'êtes pas membre de ce serveur.",
     "dashboard_server_added": "Serveur ajouté avec succès.",
+    "dashboard_server_removed": "Serveur enlevé avec succès.",
     "dashboard_botanist_already_on_server": "Botanist est déjà sur l'un de vos serveur ?",
     "dashboard_add_server_id": "ID du serveur à ajouter",
     "field_server_id_required": "L'id du serveur est requis.",
@@ -133,6 +136,8 @@
 
     "dashboard_conf_general": "Général",
     "dashboard_conf_moderation": "Modération",
+    "dashboard_conf_remove_server": "Enlever le serveur du panel",
+    "dashboard_conf_remove_server_warning": "Enlever le serveur du panel ne supprimera <b>pas</b> vos configurations. Il ne sera juste plus dans la liste de \"Mes serveurs\". Vous pourrez le remettre à tout moment.</br>Enlever un serveur du panel permet à un autre Admin de votre serveur de pouvoir configurer le bot via le panel.",
 
     "lang_en": "English",
     "lang_fr": "Français",

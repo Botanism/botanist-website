@@ -19,6 +19,12 @@
             <span>{{$Lang->get('bot_link_failed')}}</span>
         </div>
     @endif
+    @if(session('server_removed'))
+        <div class="alert alert-info">
+            <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">&times;</button>
+            <span>{{$Lang->get('dashboard_server_removed')}}</span>
+        </div>
+    @endif
     <div class="card">
         <div class="card-header">
             <h4 class="title">{{$Lang->get('dashboard_my_servers')}}</h4>

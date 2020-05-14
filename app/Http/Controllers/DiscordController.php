@@ -12,10 +12,10 @@ class DiscordController
 
     private $OAuth2ClientId, $OAuth2ClientSecret, $botPrivateToken;
 
-    private $tokenUrl = "https://discordapp.com/api/oauth2/token";
+    private $tokenUrl = "https://discord.com/api/oauth2/token";
 
-    public $apiBaseUrl = "https://discordapp.com/api/users/@me";
-    public $apiGuildBaseUrl = "https://discordapp.com/api/guilds/";
+    public $apiBaseUrl = "https://discord.com/api/users/@me";
+    public $apiGuildBaseUrl = "https://discord.com/api/guilds/";
 
     function __construct() {
         $this->OAuth2ClientId = env("BOTANIST_OAUTH_CLIENT_ID"); //TODO : CHANGE FOR THE GIT
@@ -35,7 +35,7 @@ class DiscordController
                 'grant_type' => 'authorization_code',
                 'client_id' => $this->OAuth2ClientId,
                 'client_secret' => $this->OAuth2ClientSecret,
-                'redirect_uri' => 'http://localhost:8000/discord_login',
+                'redirect_uri' => URL::to('/') . '/discord_login',
                 'code' => $code
             ];
             curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($params));

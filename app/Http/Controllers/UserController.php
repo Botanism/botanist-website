@@ -188,8 +188,16 @@ class UserController
         $getServers = json_decode($Discord->discordApiCall($Discord->apiBaseUrl.'/guilds', false, Auth::user()->access_token));
 
         $servers = [];
+        $serversId = [];
         foreach ($getServers as $srv) {
             $servers[$srv->id] = $srv;
+            $serversId[] = $srv->id;
+        }
+
+        $alreadyUsedServers = (new Server())->select('server_id')->where('user_id', '<>', Auth::id())->whereIn('server_id', $serversId)->get();
+
+        foreach ($alreadyUsedServers as $server) {
+            unset($servers[$server->server_id]);
         }
 
         return view('dashboard.servers', compact('servers', 'myServers'));
@@ -288,6 +296,14 @@ class UserController
         $serverInfo = json_decode($Discord->discordApiCall($Discord->apiGuildBaseUrl . $server->server_id, false, false,true));
 
         return view('dashboard.server', ['srvId' => $id, 'serverInfo' => $serverInfo]);
+    }
+
+    public function removeServer($id) {
+        (new Server())->where('id', '=', $id)->get()->first()->delete();
+
+        session()->flash("server_removed", true);
+
+        return redirect()->to(route('servers'));
     }
 
     public function updateConfiguration ($id, Request $request) {
