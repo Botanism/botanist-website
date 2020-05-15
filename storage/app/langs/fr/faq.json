@@ -1,7 +1,0 @@
-{
-    "common_questions": "Questions communes / générales",
-    "why_this_bot_q": "Pourquoi ce bot ?",
-    "why_this_bot_a": "Ce bot n'est pas meilleur qu'un autre, il est simplement différent. Le choix de tel ou tel bot vous appartient. Mais pour donner quelques points forts de Botanist : Il est Open Source, très complet et très modulable.",
-    "what_is_os_q": "Qu'est-ce que l'open source ?",
-    "what_is_os_a": "L'open source c'est le fait de publier le code source d'un logociel, d'une appli, d'un site... Du coup tout le monde peut voir comment il est fait. Et dans la plupart des cas n'importe qui peut également contribuer en proposant des améliorations. De plus les produits/services open sources sont généralement gratuits ! Pour plus d'info voici une <a href='https://fr.wikipedia.org/wiki/Logiciel_libre' target='_blank'>page wikipédia</a> et une vidéo de <em>Fouloscopie</em> sur <a href='https://www.youtube.com/watch?v=cWTn73BZs8c' target='_blank'>l'intelligence collective</a>.<br>D'un point de vue personnel nous sommes pour le développement de l'open source et du gratuit."
-}

@@ -283,6 +283,11 @@ h3 {
     color: #eee;
 }
 
+.alert.alert-warning {
+    background: #F5AB35;
+    color: #eee;
+}
+
 
 /* fields */
 .form-group {
@@ -508,11 +513,13 @@ header a.active {
 }
 .faq h2 {
     font-size: 2.3rem;
+    margin-bottom: 0;
 }
 
 .faq-box {
     border-radius: .6rem;
     overflow: hidden;
+    margin-bottom: 2.5rem;
 }
 .faq-container .faq-question {
     display: block;

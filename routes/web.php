@@ -3,9 +3,10 @@
 use Illuminate\Support\Facades\Auth;
 use \App\Http\Middleware\ServerProperty;
 use \App\Http\Middleware\CheckToken;
+use App\Http\Controllers\LangController as Lang;
 
 View::composer('*', function ($view) {
-    $view->with('Lang', new \App\Http\Controllers\LangController());
+    $view->with('Lang', new Lang());
     $view->with('currRoute', Route::currentRouteName());
 });
 
@@ -14,7 +15,16 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/faq', function () {
-    return view('faq');
+    $file = storage_path()."/app/faq/" . (new Lang())->userLang() . ".json";
+    $faq = [];
+    if (!file_exists($file)) {
+        $faqMissingLanguage = true;
+    } else {
+        $faqMissingLanguage = false;
+        $faq = json_decode(file_get_contents($file));
+    }
+
+    return view('faq', compact('faq', 'faqMissingLanguage'));
 })->name('faq');
 
 Route::get('/doc/{mainDir?}/{subDir?}/{subSubDir?}', 'DocController@main')->name('doc');

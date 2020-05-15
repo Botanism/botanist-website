@@ -4,16 +4,20 @@
     <div class="container faq">
         <h1 class="page-title">{{$Lang->get('navbar_faq')}}</h1>
 
-        <h2>{{$Lang->get('common_questions', 'faq')}}</h2>
-        <div class="faq-box">
-            <div class="faq-container">
-                <a class="faq-question"><i class="fas fa-chevron-right"></i> {{$Lang->get('why_this_bot_q', 'faq')}}</a>
-                <div class="faq-answer">{!! $Lang->get('why_this_bot_a', 'faq') !!}</div>
-            </div>
-            <div class="faq-container">
-                <a class="faq-question"><i class="fas fa-chevron-right"></i> {{$Lang->get('what_is_os_q', 'faq')}}</a>
-                <div class="faq-answer">{!! $Lang->get('what_is_os_a', 'faq') !!}</div>
-            </div>
-        </div>
+        @if($faqMissingLanguage)
+            <div class="alert alert-warning">{{$Lang->get('faq_not_available_language')}}</div>
+        @else
+            @foreach($faq as $category)
+                <h2>{{$category->category}}</h2>
+                <div class="faq-box">
+                    @foreach($category->questions as $question)
+                        <div class="faq-container" id="{{Str::slug($question->question, '_')}}">
+                            <a class="faq-question"><i class="fas fa-chevron-right"></i> {{$question->question}}</a>
+                            <div class="faq-answer">{!! $question->answer !!}</div>
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
+        @endif
     </div>
 @endsection

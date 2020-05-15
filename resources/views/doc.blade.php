@@ -10,12 +10,22 @@
             <ul class="main-doc">
                 @foreach($nav as $key => $item)
                     <li{!! ($dirs[0] == $key)? ' class="active open"':'' !!}>
-                        <a href="/doc/{{$key}}">{{$item['title']}}{!! (isset($item['children']) && sizeof($item['children']) > 0)? '<i class="fas fa-chevron-left drop"></i>' : '' !!}</a>
+                        @if(isset($item['children']) && sizeof($item['children']) > 0)
+                            <a href="/doc/{{ $key . '/' . array_keys($item['children'])[0] }}">{{$item['title']}} <i class="fas fa-chevron-left drop"></i></a>
+                        @else
+                            <a href="/doc/{{$key}}">{{$item['title']}}</a>
+                        @endif
+
                         @if(isset($item['children']) && sizeof($item['children']) > 0)
                             <ul class="sub-doc">
                                 @foreach($item['children'] as $sdKey => $subDirectory)
                                     <li{!! (isset($dirs[1]) && $dirs[1] == $sdKey)? ' class="active open"':'' !!}>
-                                        <a href="/doc/{{$key}}/{{$sdKey}}">{{$subDirectory['title']}}{!! (isset($subDirectory['children']) && sizeof($subDirectory['children']) > 0)? '<i class="fas fa-chevron-left drop"></i>' : '' !!}</a>
+                                        @if(isset($subDirectory['children']) && sizeof($subDirectory['children']) > 0)
+                                            <a href="/doc/{{ $key.'/'.$sdKey.'/'. array_keys($subDirectory['children'])[0] }}">{{$subDirectory['title']}} <i class="fas fa-chevron-left drop"></i></a>
+                                        @else
+                                            <a href="/doc/{{$key.'/'.$sdKey }}">{{$subDirectory['title']}}</a>
+                                        @endif
+
                                         @if(isset($subDirectory['children']) && sizeof($subDirectory['children']) > 0)
                                             <ul class="sub-sub-doc">
                                                 @foreach($subDirectory['children'] as $ssdKey => $subSubDirectory)
