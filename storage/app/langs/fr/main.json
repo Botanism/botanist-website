@@ -38,7 +38,7 @@
     "login_using_discord": "<i class='fab fa-discord'></i> Se connecter avec Discord",
     "login": "Connexion",
     "register": "Inscription",
-    "field_login": "Adresse Électronique / Nom d'Utilisateur",
+    "field_login": "E-mail / Nom d'Utilisateur",
     "field_password": "Mot de passe",
     "login_button": "Connexion",
     "field_pseudo": "Nom d'Utilisateur",
