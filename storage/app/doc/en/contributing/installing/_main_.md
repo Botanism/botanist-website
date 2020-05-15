@@ -1,3 +1,5 @@
+priority: 2
+[----]
 # Automated
 To ease the whole process you can now choose to run our automated `deploy.sh` script. If so you only need to get this file from the repository, all else will be handled by the said script. This is the recommended solution.
 Do note this will **not work** if you are not under a Linux system.

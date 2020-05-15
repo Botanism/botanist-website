@@ -1,4 +1,5 @@
 title: Publishing
+priority: 3
 [----]
 
 Now that you have improve our bot you have to publish what you did! For that you have to make a Pull Request (PR), it's like a proposition.

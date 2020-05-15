@@ -1,3 +1,5 @@
+priority: 1
+[----]
 These rules only concern you if you intend to contribute with code, if you want to translate you can directly jump to the next section.
 
 Although contributing to the project is allowed and even encouraged it has to follow a few rules in order to actually benefit the project.

@@ -1,3 +1,5 @@
+priority: 4
+[----]
 
 Since `v2.0` the bot now supports translation. However these translations are not made by the maintainer of the repository ([s0lst1ce](https://github.com/s0lst1ce)) but by different individuals from the community. Hence this section explains how such people should start begin their journey. First and foremost, previous explanations apply within the applicable limit. That means that code specific notices should be ignored if you're only translating. However general [rules](#Rules) shouldn't!
 As for translation itself it is recommended to use a good text editor with syntax highlighting. This is because no translation tool exists for our format (as far as we know) and that we use JSON files. A good choice would be to use [SBT3](https://www.sublimetext.com/) but any similar tool will do the trick.
