@@ -252,6 +252,19 @@ footer {
     padding: .4rem .5rem;
 }
 
+.form-check-container > label {
+    display: block;
+}
+.form-check-container .form-check {
+    display: inline-block;
+    margin: 0 .5rem .5rem .5rem;
+}
+.form-check-container .form-check label {
+   font-size: .875rem;
+}
+
+
+
 @media (min-width: 992px){
     .config-cat-name {
         font-size: 1rem;

@@ -114,17 +114,32 @@ $('.settings-parent').on('change', '.settings-option', function () {
     $('#settings-saver').css('transform', 'translateY(0)');
 });
 
-$('.settings-parent').on('click', ' select.settings-option option', function () {
+$('.settings-parent').on('change', '.form-check-container input[type=checkbox]', function () {
     if($(this).val()) {
-        $(this).parent().find("option[value='']").prop("selected", false);
+        if ($(this).prop("checked")) {
+            $(this).closest('.form-check-container').find("input[value='']").prop("checked", false);
+            if($(this).closest('.form-check-container').attr('id') == "role_admin") {
+                $('#role_manager').find("input[value='']").prop("checked", false);
+            }
+        }
     } else {
-        $(this).parent().find("option").not($(this)).prop('selected', false);
+        $(this).closest('.form-check-container').find("input[type=checkbox]").not($(this)).prop('checked', false);
     }
+
+    let disable = true;
+    $(this).closest('.form-check-container').find('input').each(function (el) {
+        if ($(this).prop('checked')) disable = false;
+    });
+    if (disable) {
+        $(this).closest('.form-check-container').find("input[value='']").prop("checked", true);
+    }
+
+    $('#settings-saver').css('transform', 'translateY(0)');
 });
 
-$('#role_admin option').on('click', function () {
+$('#role_admin input[type=checkbox]').on('change', function () {
     if ($(this).val()) {
-        $("#role_manager option[value='"+$(this).val()+"']").prop("selected", true);
+        $("#role_manager input[value='"+$(this).val()+"']").prop("checked", true);
     }
 });
 
@@ -135,6 +150,21 @@ $("#save-settings").on('click', function () {
 
     $(".settings-option").each(function () {
         elements[$(this).attr('id')] = $(this).val();
+    });
+
+    $(".form-check-container").each(function () {
+        let key = $(this).find('input[type=checkbox]').attr('name');
+        let values = [];
+        let els = $(this).find('input[type=checkbox]');
+
+        els.each((n) => {
+            if($(els[n]).prop('checked')) {
+                values.push($(els[n]).val());
+
+            }
+        });
+
+        elements[key] = values;
     });
 
     $.ajax({
