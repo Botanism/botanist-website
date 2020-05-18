@@ -33,7 +33,7 @@
 
             <p class="split-or">{{$Lang->get('or')}}</p>
 
-            <a class="btn btn-primary discord-login" href="https://discordapp.com/api/oauth2/authorize?client_id=643858878529798166&redirect_uri=http%3A%2F%2Flocalhost%3A8000%2Fdiscord_login&response_type=code&scope=identify%20email%20guilds">{!! $Lang->get('login_using_discord') !!}</a>
+            <a class="btn btn-primary discord-login" href="https://discordapp.com/api/oauth2/authorize?client_id=643858878529798166&redirect_uri={{URL::to('/')}}%2Fdiscord_login&response_type=code&scope=identify%20email%20guilds">{!! $Lang->get('login_using_discord') !!}</a>
 
             <div class="login-links">
                 <a href="{{route('login')}}">{{$Lang->get('have_account')}}</a>
