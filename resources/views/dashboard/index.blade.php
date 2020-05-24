@@ -81,7 +81,7 @@
                         <h4 class="title">{{$Lang->get('dashboard_link_discord_title')}}</h4>
                     </div>
                     <div class="card-body">
-                        <a class="btn btn-primary" href="https://discordapp.com/api/oauth2/authorize?client_id=643858878529798166&redirect_uri={{URL::to('/')}}%2Fdiscord_login&response_type=code&scope=identify%20email%20guilds"><i class="fab fa-discord"></i> {{$Lang->get('dashboard_link_discord')}}</a>
+                        <a class="btn btn-primary" href="https://discordapp.com/api/oauth2/authorize?client_id=643858878529798166&redirect_uri={{urlencode(URL::to('/') . "/discord_login")}}&response_type=code&scope=identify%20email%20guilds"><i class="fab fa-discord"></i> {{$Lang->get('dashboard_link_discord')}}</a>
                     </div>
                 </div>
             @endif

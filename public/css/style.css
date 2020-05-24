@@ -364,6 +364,7 @@ header .lang-select-zone .lang-select-langs {
     top: 100%;
     right: 0;
     display: none;
+    z-index: 1000;
 
     background-color: #23272a;
     border-radius: 0 0 10px 10px;
