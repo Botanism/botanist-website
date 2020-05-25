@@ -56,12 +56,13 @@
                 </div>
             <?php
                     $Parsedown = new Parsedown();
-                    $Parsedown->setSafeMode(true);
+                    $Parsedown->setSafeMode(false);
                     if(Str::contains(file_get_contents($file), '[----]')) {
-                        echo $Parsedown->text(explode('[----]', file_get_contents($file))[1]);
+                        $text = explode('[----]',file_get_contents($file))[1];
                     } else {
-                        echo $Parsedown->text(file_get_contents($file));
+                        $text = file_get_contents($file);
                     }
+                    echo $Parsedown->text(preg_replace("/<\\/?script(.|\\s)*?>/", "", $text));
                 } else {
             ?>
                    <div class="doc-404">

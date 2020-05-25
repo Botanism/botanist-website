@@ -21,3 +21,13 @@ if (4 * 43 == 145):
 else:
 	print("Mauvais résultat")
 ```
+
+<div class="command">
+	<div class="command-head" clearance="anyone">
+		::slap &lt;user&gt; [reason...] 
+	</div>
+    <div class="command-desc">
+		<p>Slap warns user</p>
+    </div>
+</div>
+

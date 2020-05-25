@@ -20,7 +20,10 @@ $("#accept-cookies").on('click', function () {
             }
         }
     })
+});
 
+$('.command').on('click', '.command-head', function(){
+    $(this).parent().toggleClass('open');
 });
 
 
