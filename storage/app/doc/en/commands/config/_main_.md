@@ -11,13 +11,12 @@ Allows the owner of a server to configure the behavior of the bot.
 </div>
 
 
-
 <div class="command">
   <div class="command-head" clearance="administrator">
     cfg &lt;extension&gt;
   </div>
   <div class="command-desc">
-    <p>starts the configuration of the `extension` extension. This is done in a new, restricted, channel</p>
+    <p>Starts the configuration of the `extension` extension. This is done in a new, restricted, channel.</p>
   </div>
 </div>
 
@@ -26,8 +25,9 @@ Allows the owner of a server to configure the behavior of the bot.
     summary
   </div>
   <div class="command-desc">
-    <p>Returns an exhaustive description of all settings set in the current server</p>
+    <p>Returns an exhaustive description of all settings set in the current server.</p>
   </div>
 </div>
+
 
 

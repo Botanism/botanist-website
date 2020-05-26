@@ -5,6 +5,6 @@ This extension allows any user to send a message as an embed. The color of the e
     embed [message...]
   </div>
   <div class="command-desc">
-    <p>converts all arguments which form the user's message into a new embed one. Markdown is supported, including named links</p>
+    <p>Converts all arguments which form the user's message into a new embed one. Markdown is supported, including named links.</p>
   </div>
 </div>

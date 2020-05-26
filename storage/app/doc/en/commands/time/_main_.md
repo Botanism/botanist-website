@@ -5,7 +5,7 @@ Gives several time-related commands to ease organization. For now this only incl
     remind &lt;date&gt; [message...] 
   </div>
   <div class="command-desc">
-    <p>returns the specified message after the specified amount of time. To precise the delay before sending the message use the following format: `1d15h6m1s` where `d` stands for days, `h` for hours, `m` for minutes and `s` for seconds. The numbers preceding them must be integers and represent the number of units to wait for (be it days, hours, minutes or seconds). All other words given as argument will form the message's content and will be sent in PM to the user after the specified delay has elapsed.</p>
+    <p>Returns the specified message after the specified amount of time. To precise the delay before sending the message use the following format: `1d15h6m1s` where `d` stands for days, `h` for hours, `m` for minutes and `s` for seconds. The numbers preceding them must be integers and represent the number of units to wait for (be it days, hours, minutes or seconds). All other words given as argument will form the message's content and will be sent in PM to the user after the specified delay has elapsed.</p>
   </div>
 </div>
 
@@ -14,7 +14,7 @@ Gives several time-related commands to ease organization. For now this only incl
     event new &lt;name&gt;
   </div>
   <div class="command-desc">
-    <p>creates a live event creation session in Direct Message (DM). The bot will ask the user to fill in the required and optional fields of `name`.</p>
+    <p>Creates a live event creation session in Direct Message (DM). The bot will ask the user to fill in the required and optional fields of `name`.</p>
   </div>
 </div>
 
@@ -32,7 +32,7 @@ Gives several time-related commands to ease organization. For now this only incl
     event rm &lt;name&gt;
   </div>
   <div class="command-desc">
-    <p>Deletes the `name` event from the user’s selection of events</p>
+    <p>Deletes the `name` event from the user’s selection of events.</p>
   </div>
 </div>
 
@@ -50,7 +50,7 @@ Gives several time-related commands to ease organization. For now this only incl
     event edit &lt;name&gt; &lt;field&gt;
   </div>
   <div class="command-desc">
-    <p>lets the user only edit `field` for `name` event </p>
+    <p>Lets the user only edit `field` for `name` event.</p>
   </div>
 </div>
 
@@ -59,7 +59,7 @@ Gives several time-related commands to ease organization. For now this only incl
     event preview &lt;name&gt;
   </div>
   <div class="command-desc">
-    <p>returns the current embed bound to `name`</p>
+    <p>Returns the current embed bound to `name`.</p>
   </div>
 </div>
 

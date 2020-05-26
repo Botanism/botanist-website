@@ -5,7 +5,7 @@ This suite of commands provides automatic poll creation. A poll is an embed mess
     poll rm &lt;msg_ig&gt;
   </div>
   <div class="command-desc">
-    <p>If the user is the author of the poll with the `msg_id` message, the bot deletes the specified poll</p>
+    <p>If the user is the author of the poll with the `msg_id` message, the bot deletes the specified poll.</p>
   </div>
 </div>
 
@@ -23,6 +23,6 @@ This suite of commands provides automatic poll creation. A poll is an embed mess
     poll extended &lt;description...&gt; &lt;choices...&gt;
   </div>
   <div class="command-desc">
-    <p>This command creates polls that can have more than the 3 standard reaction but do not support dynamic color. The way to make one is to be write the following command in a poll channel (message discarded otherwise). The message is composed of the description then a line break then, one each following line: an emoji followed by a description each of these lines are separated by a line break</p>
+    <p>This command creates polls that can have more than the 3 standard reaction but do not support dynamic color. The way to make one is to be write the following command in a poll channel (message discarded otherwise). The message is composed of the description then a line break then, one each following line: an emoji followed by a description each of these lines are separated by a line break.</p>
   </div>
 </div>
