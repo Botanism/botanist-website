@@ -76,7 +76,7 @@ a {
     text-decoration: none;
     cursor: pointer;
     color: #fff;
-    font-weight: 400;
+    font-weight: 600;
     transition: color .3s;
 }
 a:hover {
@@ -549,6 +549,9 @@ header a.active {
     background-color: #333b3e;
     font-weight: 300;
     display: none;
+}
+.faq-container .faq-answer a {
+    font-weight: 400;
 }
 
 

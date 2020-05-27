@@ -20,7 +20,7 @@
     "ext_embedding_desc": "<em>Embedding</em> ajoute la commande <code>::embed [message]</code>, qui enverra le message sous forme d'embed.",
 
     "cookies_short_text": "Nous utilisons des cookies afin de vous garder connecté et c'est tout ! Nous ne vendons rien à personne et vous pouvez les supprimer à tout moment !",
-    "cookies_more_info": "Besoin de plus d'infos ? Tu peux cliquer <a href=\"faq#cookies\">ici</a> !",
+    "cookies_more_info": "Besoin de plus d'infos ? Tu peux <a href=\"faq#cookies\">cliquer ici</a> !",
     "cookies_okay": "Okay !",
 
     "faq_not_available_language": "La FAQ n'est pas disponible dans cette langue. Essayez avec une autre langue !",
