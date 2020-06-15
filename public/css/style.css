@@ -788,7 +788,7 @@ header a.active {
 }
 .doc-container .command .command-head[clearance="anyone"]::after { background: #c0c0c0; color: #111; }
 .doc-container .command .command-head[clearance="runner"]::after { background: #1e003d; }
-.doc-container .command .command-head[clearance="owner"]::after { background: #F39C12;}
+.doc-container .command .command-head[clearance="owner"]::after { background: #c19c0b;}
 .doc-container .command .command-head[clearance="administrator"]::after { background: #D73C2C; }
 .doc-container .command .command-head[clearance="manager"]::after { background: #d87400; }
 .doc-container .command .command-head[clearance="planner"]::after { background: #37dbd0; color: #111; }
