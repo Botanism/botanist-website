@@ -9,7 +9,7 @@
     "modularity": "Modularité",
     "modularity_desc": "Botanist est défini par sa modularité, il est composé de différentes extensions telles que rôles, sondages ou encore todo. Elles sont toutes activables et désactivables à guise et tout ça d'une simple commande !",
     "opensource": "Open Source",
-    "opensource_desc": "L'open source est très important pour nous. Qu'est-ce que ça veut dire ? Ça veut dire que le code est visible par tout le monde et que n'importe qui peut participer à son amélioration facilement.<br>Vous voulez particper ? Rendez vous sur <a href=''>GitHub</a> !",
+    "opensource_desc": "L'open source est très important pour nous. Qu'est-ce que ça veut dire ? Ça veut dire que le code est visible par tout le monde et que n'importe qui peut participer à son amélioration facilement.<br>Vous voulez particper ? Rendez vous sur <a target=\"_blank\" href='https://github.com/Botanism/botanist-website'>GitHub</a> !",
     "extensions":  "Extensions",
     "extensions_desc": "Voici quelques unes des extensions de Botanist, si vous voulez une liste complète vous pouvez aller voir la <a href=''>Doc</a>",
     "ext_slapping": "Slapping",
@@ -69,7 +69,7 @@
 
     "doc_404": "Oups la page n'a pas été trouvée !",
 
-    "footer_license": "<span class='copyleft'>&copy;</span> Ce site est sous licence MIT et disponible sur <a href='https://github.com' target='_blank'><i class='fab fa-github'></i></a>",
+    "footer_license": "<span class='copyleft'>&copy;</span> Ce site est sous licence MIT et disponible sur <a href='https://github.com/Botanism/botanist-website' target='_blank'><i class='fab fa-github'></i></a>",
     "footer_author": "Fait avec <i class='fab fa-linux'></i> & <i class='fas fa-heart'></i> par <a href='https://adrien.luitot.fr' target='_blank'>Adrien Luitot</a>",
     "lang_bad_format": "Le format de la langue n'est pas correct. Il devrait être comme cela : xx.",
     "lang_not_supported": "La langue n'est pas supportée.",

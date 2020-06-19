@@ -9,9 +9,9 @@
     "modularity": "Modularity",
     "modularity_desc": "Botanist was designed with modularity at its core. It is made of several extensions such as slapping, polls, and so on. Each of them is indendant, meaning you can enable and disable them at will and with ease using the built-in extension manager!",
     "opensource": "Open Source",
-    "opensource_desc": "Open Source holds a dear place in our philosophy, that's why we've made our entire codebase public. Because of this none own the code and everyone can modify and distribute it. This also means that improving the bot is far easier. You want to help us make it better? Let's meet onver on <a href=''>GitHub</a>!",
+    "opensource_desc": "Open Source holds a dear place in our philosophy, that's why we've made our entire codebase public. Because of this none own the code and everyone can modify and distribute it. This also means that improving the bot is far easier. You want to help us make it better? Let's meet onver on <a target=\"_blank\" href='https://github.com/Botanism/botanist-website'>GitHub</a>!",
     "extensions":  "Extensions",
-    "extensions_desc": "Here are some of Botanist's extensions. Head over to the <a href=''>Doc</a> to ~~catch~~ discover them all!",
+    "extensions_desc": "Here are some of Botanist's extensions. Head over to the <a href=''>Doc</a> to <strike>catch</strike> discover them all!",
     "ext_slapping": "Slapping",
     "ext_slapping_desc": "L'extension <em>Slapping</em> permet de \"slap\" vos membres. C'est un système d'avertissement. Au bout de X avertissements le membre se fera bannir.",
     "ext_poll": "Sondage",
@@ -65,7 +65,7 @@
 
     "doc_404": "Sorry, we couldn't resolve this page!",
 
-    "footer_license": "<span class='copyleft'>&copy;</span> This website is under the MIT licence and available at <a href='https://github.com' target='_blank'><i class='fab fa-github'></i></a>",
+    "footer_license": "<span class='copyleft'>&copy;</span> This website is under the MIT licence and available at <a href='https://github.com/Botanism/botanist-website' target='_blank'><i class='fab fa-github'></i></a>",
     "footer_author": "Made with <i class='fab fa-linux'></i> & <i class='fas fa-heart'></i> by <a href='https://adrien.luitot.fr' target='_blank'>Adrien Luitot</a>",
     "lang_bad_format": "The language tag is incorrect. It should be made of two lowercase letters.",
     "lang_not_supported": "This language is unavailable.",

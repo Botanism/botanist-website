@@ -11,7 +11,7 @@
         <link rel="manifest" href="{{asset('images/favicon/site.webmanifest')}}">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#2c2f33">
-        
+
         <title>Botanist - Discord Bot</title>
 
         <link rel="stylesheet" href="{{ asset('css/fa.min.css') }}">
