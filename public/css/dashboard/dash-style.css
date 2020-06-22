@@ -48,6 +48,16 @@ textarea {
     height: unset;
 }
 
+.form-check.is-invalid label {
+    color: #ff8d72;
+}
+.form-check.is-invalid .form-check-sign::before {
+    border-color: #ff8d72;
+}
+.form-check-container .form-check.is-invalid + .invalid-feedback {
+    display: block;
+}
+
 /** Alerts **/
 .alert.alert-warning {
     background: #fda924;

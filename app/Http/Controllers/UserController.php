@@ -319,8 +319,10 @@ class UserController
             'channel_todo' => ['nullable', 'digits:18'],
             'channel_advertisement' => ['nullable', 'digits:18'],
             'channel_poll.*' => ['nullable', 'digits:18'],
-            'role_manager.*' => ['nullable', 'digits:18'],
-            'role_admin.*' => ['nullable', 'digits:18'],
+            'role_manager' => ['required', 'array'],
+            'role_manager.*' => ['required', 'digits:18'],
+            'role_admin' => ['required', 'array'],
+            'role_admin.*' => ['required', 'digits:18'],
             'role_free.*' => ['nullable', 'digits:18']
         ],
         [
@@ -331,9 +333,13 @@ class UserController
             'channel_todo.digits' =>  $Lang->get('channels_wrong_size'),
             'channel_advertisement.digits' =>  $Lang->get('channels_wrong_size'),
             'channel_poll.*.digits' =>  $Lang->get('channels_wrong_size'),
+            'role_manager.required' =>  $Lang->get('general_field_required'),
             'role_manager.*.digits' =>  $Lang->get('roles_wrong_size'),
+            'role_manager.*.required' =>  $Lang->get('general_field_required'),
+            'role_admin.required' =>  $Lang->get('general_field_required'),
             'role_admin.*.digits' =>  $Lang->get('roles_wrong_size'),
-            'role_free.*.digits' =>  $Lang->get('roles_wrong_size')
+            'role_admin.*.required' =>  $Lang->get('general_field_required'),
+            'role_free.*.digits' =>  $Lang->get('roles_wrong_size'),
         ]);
 
         if ($validation->fails()) {

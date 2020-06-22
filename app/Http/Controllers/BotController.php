@@ -58,17 +58,23 @@ class BotController
         return $query;
     }
 
-    private function checkRoles($serverRoles, $roles) {
+    private function checkRoles($serverRoles, $roles, $canBeEmpty=true) {
         $rolesList = [];
-        if(sizeof($roles) == 1 && $roles[0] == "") return [];
+        if(sizeof($roles) == 1 && $roles[0] == "") {
+            if($canBeEmpty) {
+                return [true, []];
+            } else {
+                return [false, $Lang->get("general_field_required")];
+            }
+        }
         foreach ($roles as $role) {
             if(!in_array($role, $serverRoles)) {
-                return false;
+                return [false, $Lang->get("role_not_on_server")];
             } else {
                 $rolesList[] = intval($role);
             }
         }
-        return $rolesList;
+        return [true, $rolesList];
     }
 
     private function checkChannels($serverChannels, $channels) {
@@ -89,7 +95,7 @@ class BotController
 
         $Lang = new Lang();
         $Discord = new Discord();
-        $serverInfo = json_decode($Discord->discordApiCall($Discord->apiGuildBaseUrl . $serverId, false, false,true));
+        // $serverInfo = json_decode($Discord->discordApiCall($Discord->apiGuildBaseUrl . $serverId, false, false,true));
         $getChannels = json_decode($Discord->discordApiCall($Discord->apiGuildBaseUrl . $serverId . "/channels", false, false,true));
         $getRoles = json_decode($Discord->discordApiCall($Discord->apiGuildBaseUrl . $serverId . "/roles", false, false,true));
 
@@ -105,28 +111,28 @@ class BotController
 
         if(isset($newConfFields["role_free"])) {
             $roles = $this->checkRoles($rolesList, $newConfFields["role_free"]);
-            if($roles === false) {
-                return ["state" => "error", "error" => $Lang->get("role_not_on_server")];
+            if($roles[0] === false) {
+                return ["state" => "error", "error" => $roles[1]];
             } else {
-                $srvConf["free_roles"] = $roles;
+                $srvConf["free_roles"] = $roles[1];
             }
         }
 
         if(isset($newConfFields["role_manager"])) {
-            $roles = $this->checkRoles($rolesList, $newConfFields["role_manager"]);
-            if ($roles === false) {
-                return ["state" => "error", "error" => $Lang->get("role_not_on_server")];
+            $roles = $this->checkRoles($rolesList, $newConfFields["role_manager"], false);
+            if ($roles[0] === false) {
+                return ["state" => "error", "error" => $roles[1]];
             } else {
-                $srvConf["roles"]["manager"] = $roles;
+                $srvConf["roles"]["manager"] = $roles[1];
             }
         }
 
         if(isset($newConfFields["role_admin"])) {
-            $roles = $this->checkRoles($rolesList, $newConfFields["role_admin"]);
-            if($roles === false) {
-                return ["state" => "error", "error" => $Lang->get("role_not_on_server")];
+            $roles = $this->checkRoles($rolesList, $newConfFields["role_admin"], false);
+            if($roles[0] === false) {
+                return ["state" => "error", "error" => $roles[1]];
             } else {
-                $srvConf["roles"]["admin"] = $roles;
+                $srvConf["roles"]["admin"] = $roles[1];
             }
         }
 
@@ -151,7 +157,7 @@ class BotController
             if ($newConfFields["channel_todo"] == "") {
                 $srvConf["todo_channel"] = false;
             } elseif(in_array($newConfFields["channel_todo"], $channelsList)) {
-                // Temporary disabled
+                //// Temporary disabled ////
                 // $srvConf["todo_channel"] = intval($newConfFields["channel_todo"]);
             } else {
                 return ["state" => "error", "error" => $Lang->get("channel_not_on_server")];
@@ -196,7 +202,7 @@ class BotController
         $query = curl_exec($ch);
         curl_close($ch);
 
-        if(!$query) return ["state" => "error", "error" => $Lang->get("bot_link_failed")];
+        if($query === false) return ["state" => "error", "error" => $Lang->get("bot_link_failed")];
 
         return ["state" => "success"];
     }

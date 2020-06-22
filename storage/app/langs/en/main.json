@@ -112,7 +112,7 @@
     "dashboard_current_pass": "Current password",
     "dashboard_new_pass": "New password",
     "dashboard_confirm_new_pass": "Confirm new password",
-    "dashboard_author": "Made with <i class='fas fa-heart'></i> by <a href='https://github.com/creativetimofficial/black-dashboard' target='_blank'>Creative Tim</a>. Modified by <a href='https://adrien.luitot.fr' target='_blank'>Adrien Luitot</a>.",
+    "dashboard_author": "Made with <i class='fas fa-heart'></i> by <a href='https://github.com/creativetimofficial/black-dashboard' target='_blank'>Creative Tim</a>. Edited by <a href='https://adrien.luitot.fr' target='_blank'>Adrien Luitot</a>.",
     "dashboard_server_name": "Name",
     "dashboard_server_members": "Members",
     "dashboard_server_actions": "Actions",
@@ -147,6 +147,7 @@
     "language_not_available": "Botanist is not available for thsis language.",
     "channel_not_on_server": "This channel doesn't exist on this server.",
 
+    "general_field_required": "This field is required.",
     "bot_link_failed": "Couldn't link withthe bot. Please try again later.",
     "settings_edited": "Registered new configuration! If you are done don't forget to save for your changes to take effect.",
     "settings_save": "Save",

@@ -154,6 +154,7 @@
     "language_not_available": "Botanist n'est pas compatible avec cette langue.",
     "channel_not_on_server": "Le salon n'existe pas sur le serveur.",
 
+    "general_field_required": "Ce champs est requis.",
     "bot_link_failed": "La connexion avec le bot a échoué. Veuillez réessayer plus tard.",
     "settings_edited": "La configuration a été modifié ! Si vous avez fini, n'oubliez pas de la sauvegarder sinon vous perdrez toute modification !",
     "settings_save": "Sauvegarder",

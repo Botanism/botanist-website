@@ -109,8 +109,9 @@ $("#oh-dear-we-are-in-trouble").on('click', function () {
 
 
 /** CONFIG **/
+var modifications = false;
 $('.settings-parent').on('change', '.settings-option', function () {
-
+    modifications = true;
     $('#settings-saver').css('transform', 'translateY(0)');
 });
 
@@ -127,19 +128,25 @@ $('.settings-parent').on('change', '.form-check-container input[type=checkbox]',
     }
 
     let disable = true;
-    $(this).closest('.form-check-container').find('input').each(function (el) {
+    $(this).closest('.form-check-container').find('input').each(function () {
         if ($(this).prop('checked')) disable = false;
     });
     if (disable) {
         $(this).closest('.form-check-container').find("input[value='']").prop("checked", true);
     }
 
+    modifications = true;
     $('#settings-saver').css('transform', 'translateY(0)');
 });
 
+$('#role_manager input[type=checkbox]').on('change', function () {
+    if ($(this).prop('checked')) {
+        $("#role_admin input[value='" + $(this).val() + "']").prop("checked", true);
+    }
+});
 $('#role_admin input[type=checkbox]').on('change', function () {
-    if ($(this).val()) {
-        $("#role_manager input[value='"+$(this).val()+"']").prop("checked", true);
+    if (!$(this).prop('checked')) {
+        $("#role_manager input[value='"+$(this).val()+"']").prop("checked", false);
     }
 });
 
@@ -180,18 +187,26 @@ $("#save-settings").on('click', function () {
 
             console.log(data);
             $(".settings-parent .invalid-feedback").remove();
-            $(".settings-parent .settings-option").removeClass("id-invalid");
+            $(".settings-parent .settings-option, .settings-parent .form-check").removeClass("is-invalid");
 
             if (data.errors.length == 0) {
                 $('#settings-saver').css('transform', 'translateY(100%)');
+                modifications = false;
             } else {
                 for (const el in data.errors) {
-                    $("#" + el).addClass("is-invalid").after('<div class="invalid-feedback"></div>');
                     let errors = "";
                     for (const msg of data.errors[el]) {
                         errors += msg + "\n";
                     }
-                    $("#" + el).parent().find(".invalid-feedback").html(errors);
+
+                    if($("#" + el).hasClass("form-check-container")) {
+                        $("#"+ el + ' .form-check').addClass('is-invalid');
+                        $("#"+ el).append('<div class="invalid-feedback"></div>')
+                            .find('.invalid-feedback').html(errors);
+                    } else {
+                        $("#" + el).addClass("is-invalid").after('<div class="invalid-feedback"></div>')
+                            .parent().find(".invalid-feedback").html(errors);
+                    }
                 }
             }
         }

@@ -60,7 +60,7 @@
                         </select>
                     </div>
 
-                    <div class="form-group col-lg-6 form-check-container">
+                    <div class="form-group col-lg-6 form-check-container" id="channel_poll">
                         <label>{{$Lang->get("channel_poll")}}</label>
 
                         <div class="form-check">
@@ -127,15 +127,6 @@
                 <div class="row">
                     <div class="form-group col-lg-6 form-check-container" id="role_manager">
                         <label>{{$Lang->get("role_manager")}}</label>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input autocomplete="off" class="form-check-input" type="checkbox" name="role_manager" value="" {{(sizeof($serverConfig->roles->manager)==0)? "checked":""}}>
-                                {{$Lang->get("disabled")}}
-                                <span class="form-check-sign"><span class="check"></span></span>
-                            </label>
-                        </div>
-
                         @foreach($roles as $role)
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -151,15 +142,6 @@
 
                     <div class="form-group col-lg-6 form-check-container" id="role_admin">
                         <label>{{$Lang->get("role_admin")}}</label>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input autocomplete="off" class="form-check-input" type="checkbox" name="role_admin" value="" {{(sizeof($serverConfig->roles->admin)==0)? "checked":""}}>
-                                {{$Lang->get("disabled")}}
-                                <span class="form-check-sign"><span class="check"></span></span>
-                            </label>
-                        </div>
-
                         @foreach($roles as $role)
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -173,7 +155,7 @@
                         @endforeach
                     </div>
 
-                    <div class="form-group col-lg-6 form-check-container">
+                    <div class="form-group col-lg-6 form-check-container" id="role_free">
                         <label>{{$Lang->get("role_free")}}</label>
 
                         <div class="form-check">
@@ -207,4 +189,13 @@
         <p>{{$Lang->get('settings_edited')}}</p>
         <button id="save-settings" class="btn btn-success animation-on-hover">{{$Lang->get('settings_save')}}</button>
     </div>
+
+    <script>
+        window.addEventListener('beforeunload', function (e) {
+            if(modifications) {
+                e.preventDefault();
+                e.returnValue = '';
+            }
+        });
+    </script>
 @endsection
