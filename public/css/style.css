@@ -544,11 +544,15 @@ header a.active {
     transform: rotate(90deg);
 }
 .faq-container .faq-answer {
-    padding: 1rem;
     color: #ddd;
     background-color: #333b3e;
     font-weight: 300;
-    display: none;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .25s ease-out;
+}
+.faq-container .faq-answer .faq-answer-container {
+    padding: 1rem;
 }
 .faq-container .faq-answer a {
     font-weight: 400;
@@ -581,6 +585,11 @@ header a.active {
 }
 .doc-nav a:hover {
     color: #fff;
+}
+.doc-nav ul:not(.main-doc) {
+    transition: max-height .2s ease;
+    overflow: hidden;
+    max-height: 0;
 }
 .doc-nav li > a i:last-child {
     margin-left: 1.5rem;
@@ -632,20 +641,21 @@ header a.active {
     background-color: #3b3f45;
 }
 .doc-nav .sub-doc {
-    display: none;
-    padding: 0 1.2rem .5rem 2rem;
+    padding: 0 1.2rem 0 2rem;
 }
 .doc-nav .sub-doc > li {
     margin-bottom: .2rem;
 }
+.doc-nav .sub-doc > li:last-child { margin-bottom: .7rem; }
 .doc-nav .open > .sub-doc,
 .doc-nav .open > .sub-sub-doc {
-    display: block;
+    max-height: unset;
 }
 .doc-nav .sub-sub-doc {
-    display: none;
-    padding: .2rem .2rem .2rem 1.5rem;
+    padding: 0 .2rem 0 1.5rem;
 }
+.doc-nav .sub-sub-doc > li :first-child { margin-top: .4rem; }
+.doc-nav .sub-sub-doc > li :last-child { margin-bottom: .4rem; }
 .doc-nav .sub-sub-doc a {
     font-size: .9rem;
 }
@@ -795,18 +805,13 @@ header a.active {
 
 .doc-container .command .command-desc {
     max-height: 0;
-    transition: all .5s;
-}
-.doc-container .command.open .command-desc {
-    max-height: unset;
+    transition: all .3s;
 }
 .doc-container .command .command-desc p {
     background: #3b3b3b;
     padding: 1rem 2rem;
     border-radius: 0 0 .6rem .6rem;
 }
-
-
 
 .doc-404 {
     width: 100%;

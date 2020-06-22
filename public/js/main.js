@@ -24,6 +24,13 @@ $("#accept-cookies").on('click', function () {
 
 $('.command').on('click', '.command-head', function(){
     $(this).parent().toggleClass('open');
+    let desc = $(this).parent().find('.command-desc');
+    console.log($(this).parent().find('.command-desc'));
+    if($(this).parent().hasClass('open')) {
+        desc.css("max-height", desc[0].scrollHeight+"px");
+    } else {
+        desc.css("max-height", 0);
+    }
 });
 
 
@@ -59,16 +66,20 @@ $(document).on('click', function () {
 
 
 /*** FAQ ***/
+$.fn.slideShow = function(time,easing) { return $(this).animate({height:'show','margin-top':'show','margin-bottom':'show','padding-top':'show','padding-bottom':'show',opacity:1},time,easing); }
+$.fn.slideHide = function(time,easing) {return $(this).animate({height:'hide','margin-top':'hide','margin-bottom':'hide','padding-top':'hide','padding-bottom':'hide',opacity:0},time,easing);  }
+
 $('.faq-question').on('click', function () {
     let answer = $(this).parent().find('.faq-answer');
-    if($(answer).is(':visible')) {
-        answer.slideUp();
+    if($(answer).parent().hasClass('open')) {
         $(this).closest('.faq-container').removeClass("open");
+        answer.css('max-height', "0px");
     } else {
         $(this).closest('.faq-box').find('.faq-container').removeClass("open");
         $(this).closest('.faq-container').addClass("open");
-        $('.faq-question').closest('.faq-box').find('.faq-answer').slideUp();
-        answer.slideDown();
+        $(this).closest('.faq-box').find('.faq-answer').css('max-height', "0px");
+        console.log($('.faq-question').closest('.faq-box'));
+        answer.css('max-height', answer[0].scrollHeight+"px");
     }
 });
 
@@ -78,11 +89,18 @@ $('.doc-nav i.drop').on('click', function (e) {
    e.preventDefault();
    let parent = $(this).closest('li');
    if(parent.hasClass('open')) {
-       parent.children('ul').css('display', 'block');
-        parent.children('ul').slideUp(300);
+        let child = parent.children('ul')[0];
+        $(child).css('max-height', child.scrollHeight + 'px');
+        setTimeout(() => {$(child).css('max-height', 0);}, 0);
         parent.removeClass('open');
    } else {
-        parent.children('ul').slideDown(300);
+        let child = parent.children('ul')[0];
+        $(child).css('max-height', child.scrollHeight + 'px');
+        if(parent.closest('ul').length) {
+            let parentContainer = parent.closest('ul')[0];
+            console.log(parentContainer);
+            $(parentContainer).css('max-height', parentContainer.scrollHeight+child.scrollHeight + 'px');
+        }
         parent.addClass('open');
    }
 });

@@ -13,7 +13,7 @@
                     @foreach($category->questions as $question)
                         <div class="faq-container" id="{{Str::slug($question->question, '_')}}">
                             <a class="faq-question"><i class="fas fa-chevron-right"></i> {{$question->question}}</a>
-                            <div class="faq-answer">{!! $question->answer !!}</div>
+                            <div class="faq-answer"><div class="faq-answer-container">{!! $question->answer !!}</div></div>
                         </div>
                     @endforeach
                 </div>
