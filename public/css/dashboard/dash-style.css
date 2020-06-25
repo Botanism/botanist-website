@@ -1,4 +1,6 @@
 /*** GENERAL ***/
+* { outline: none !important; }
+
 .main-panel {
     border: none;
 }
@@ -161,13 +163,13 @@ footer {
 
 /*** SERVERS ***/
 .added-servers a span.server-name {
-    color: #5e77d4;
+    color: #FFD54F;
     font-weight: normal;
     transition: all .3s;
     margin-top: .5rem;
 }
 .added-servers a:hover span.server-name {
-    color: #3656c9;
+    color: #FFECB3;
     font-weight: normal;
 }
 
@@ -214,7 +216,7 @@ footer {
 }
 
 #remove-server {
-    color: #ff3c1a;
+    color: #F44336;
     cursor: pointer;
 }
 #remove-server:hover { text-decoration: underline; }
@@ -287,3 +289,72 @@ footer {
     }
 }
 
+
+
+
+/*** THEME OVERRIDE ***/
+.sidebar {
+    background: linear-gradient(0deg,#FFC107,#FFD740)
+}
+.sidebar .nav li.active > a:not([data-toggle="collapse"])::before {
+    background: rgba(44, 47, 51, .85);
+}
+.sidebar .nav i,
+.sidebar .nav p {
+    color: rgba(44, 47, 51, .7);
+}
+.sidebar .nav li.active > a:not([data-toggle="collapse"]) i,
+.sidebar .nav li.active > a:not([data-toggle="collapse"]) p,
+.sidebar .nav li > a:hover:not([data-toggle="collapse"]) i,
+.sidebar .nav li > a:hover:not([data-toggle="collapse"]) p,
+.sidebar .nav li > a:focus:not([data-toggle="collapse"]) i,
+.sidebar .nav li > a:focus:not([data-toggle="collapse"]) p {
+    color: rgba(44, 47, 51, .85);
+}
+.sidebar .divider {
+    background: rgba(44, 47, 51, .5);
+}
+
+a {
+    color: #FFC107;
+}
+a:hover, a:focus {
+    color: #FFD740;
+}
+
+.btn-primary {
+    background: #FFD740;
+    background-image: linear-gradient(to bottom left, #FFD740, #FFC107, #FFD740);
+    background-color: #FFD740;
+}
+.btn-primary:hover {
+    background-color: #FFC107 !important;
+    background-image: linear-gradient(to bottom left, #FFD740, #FFC107, #FFD740) !important;
+}
+
+.card-user .author .block.block-one, .card-user .author .block.block-two,
+.card-user .author .block.block-four, .card-user .author .block.block-three {
+    background: rgba(255, 202, 40, .6);
+    background: linear-gradient(90deg, rgba(255, 202, 40, .6) 0, rgba(225, 78, 202, 0));
+}
+
+.form-control {
+    background: #23272a;
+    border-color: transparent;
+}
+.form-control:focus {
+    border-color: #FFD740;
+}
+.form-check input[type="checkbox"]:checked + .form-check-sign::before {
+    background-color: #FFC107;
+}
+
+.main-panel {
+    background: #23272a;
+}
+.breadcrumb {
+    background: #2c2f33;
+}
+.card {
+    background: #2c2f33;
+}
