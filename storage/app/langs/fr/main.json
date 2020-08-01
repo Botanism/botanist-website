@@ -2,6 +2,7 @@
     "navbar_home": "Accueil",
     "navbar_faq": "FAQ",
     "navbar_doc": "Doc",
+    "navbar_changelogs": "Changelogs",
     "navbar_get_botanist": "Ajouter Botanist",
     "navbar_login": "Connexion",
     "navbar_account": "Compte",
@@ -24,6 +25,12 @@
     "cookies_okay": "Okay !",
 
     "faq_not_available_language": "La FAQ n'est pas disponible dans cette langue. Essayez avec une autre langue !",
+
+    "update": "Mise à jour",
+    "bot": "Bot",
+    "website": "Site",
+    "linker": "Linker API",
+    "no_changelogs_for_this_app": "Il n'y a pas de changelogs pour :app.",
 
     "or": "Ou",
     "enable": "Activer",

@@ -26,10 +26,18 @@
             <div id="mobile-toggle-zone"><a id="mobile-menu-toggler"><i class="fas fa-bars"></i></a></div>
             <ul class="navbar">
                 <div class="left-links">
-                    <li><a href="{{route('home')}}">{{$Lang->get('navbar_home')}}</a></li>
-                    <li><a href="{{route('faq')}}">{{$Lang->get('navbar_faq')}}</a></li>
-                    <li><a href="{{route('doc')}}">{{$Lang->get('navbar_doc')}}</a></li>
-                    <li><a href="" target="_blank">{{$Lang->get('navbar_get_botanist')}}</a></li>
+                    <li {!!(Route::currentRouteName() == "home")? 'class="active"' : '';!!}>
+                        <a href="{{route('home')}}">{{$Lang->get('navbar_home')}}</a>
+                    </li>
+                    <li {!!(Route::currentRouteName() == "faq")? 'class="active"' : '';!!}>
+                        <a href="{{route('faq')}}">{{$Lang->get('navbar_faq')}}</a>
+                    </li>
+                    <li {!!(Route::currentRouteName() == "doc")? 'class="active"' : '';!!}>
+                        <a href="{{route('doc')}}">{{$Lang->get('navbar_doc')}}</a>
+                    </li>
+                    <li {!!(Route::currentRouteName() == "changelogs")? 'class="active"' : '';!!}>
+                        <a href="{{route('changelogs')}}">{{$Lang->get('navbar_changelogs')}}</a>
+                    </li>
 
                     <?php if(!Auth::check()): ?>
                         <li><a href="{{route('login')}}">{{$Lang->get('navbar_login')}}</a></li>
@@ -38,13 +46,18 @@
                     <?php endif; ?>
                 </div>
 
-                <li class="lang-select-zone">
-                    <a class="lang-select"><img alt="{{$Lang->userLang()}} flag" src="{{asset('images/flags/'.$Lang->userLang().'.svg')}}"></a>
-                    <ul class="lang-select-langs">
-                        <li><a data-lang="fr"><img alt="fr flag" src="{{asset('images/flags/fr.svg')}}"> <span>Français</span></a></li>
-                        <li><a data-lang="en"><img alt="en flag" src="{{asset('images/flags/en.svg')}}"> <span>English</span></a></li>
-                    </ul>
-                </li>
+                <div class="right-links">
+                    <li><a href="" target="_blank">{{$Lang->get('navbar_get_botanist')}}</a></li>
+
+                    <li class="lang-select-zone">
+                        <a class="lang-select"><img alt="{{$Lang->userLang()}} flag" src="{{asset('images/flags/'.$Lang->userLang().'.svg')}}"></a>
+                        <ul class="lang-select-langs">
+                            <li><a data-lang="fr"><img alt="fr flag" src="{{asset('images/flags/fr.svg')}}"> <span>Français</span></a></li>
+                            <li><a data-lang="en"><img alt="en flag" src="{{asset('images/flags/en.svg')}}"> <span>English</span></a></li>
+                        </ul>
+                    </li>
+                </div>
+
             </ul>
         </header>
 

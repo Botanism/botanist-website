@@ -78,7 +78,6 @@ $('.faq-question').on('click', function () {
         $(this).closest('.faq-box').find('.faq-container').removeClass("open");
         $(this).closest('.faq-container').addClass("open");
         $(this).closest('.faq-box').find('.faq-answer').css('max-height', "0px");
-        console.log($('.faq-question').closest('.faq-box'));
         answer.css('max-height', answer[0].scrollHeight+"px");
     }
 });
@@ -104,5 +103,35 @@ $('.doc-nav i.drop').on('click', function (e) {
         parent.addClass('open');
    }
 });
+
+/*** CHANGELOGS ***/
+$.fn.slideShow = function(time,easing) { return $(this).animate({height:'show','margin-top':'show','margin-bottom':'show','padding-top':'show','padding-bottom':'show',opacity:1},time,easing); }
+$.fn.slideHide = function(time,easing) {return $(this).animate({height:'hide','margin-top':'hide','margin-bottom':'hide','padding-top':'hide','padding-bottom':'hide',opacity:0},time,easing);  }
+
+$('.version-question').on('click', function () {
+    let answer = $(this).parent().find('.version-answer');
+    if($(answer).parent().hasClass('open')) {
+        $(this).closest('.version-container').removeClass("open");
+        $(this).find('i').removeClass('fa-minus').addClass('fa-plus');
+        answer.css('max-height', "0px");
+    } else {
+        $(this).closest('.version-container').addClass("open");
+        $(this).find('i').removeClass('fa-plus').addClass('fa-minus');
+        answer.css('max-height', answer[0].scrollHeight+"px");
+    }
+});
+
+$('#changelogs-application-switch div').on('mouseover', function () {
+   $('#changelogs-application-position').css('left', $(this).position().left);
+}).on('mouseleave', function () {
+    $('#changelogs-application-position').css('left', $("#changelogs-application-switch div.active").position().left);
+}).on('click', function () {
+    $('#changelogs-application-switch div').removeClass('active');
+    $(this).addClass('active');
+    $('#changelogs-application-position').css('left', $(this).position().left);
+    $('.changelogs-main .versions.active').removeClass('active');
+    $('#' + $(this).attr('id').split('-')[1] + "-container").addClass('active');
+});
+
 
 

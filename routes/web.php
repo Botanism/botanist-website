@@ -29,6 +29,8 @@ Route::get('/faq', function () {
 
 Route::get('/doc/{mainDir?}/{subDir?}/{subSubDir?}', 'DocController@main')->name('doc');
 
+Route::get('/changelogs', 'ChangelogsController@main')->name('changelogs');
+
 Route::post('/accept_cookies', 'UserController@acceptCookies')->name('accept_cookies');
 
 Route::get('/discord_login', 'DiscordController@discordLogin')->name('discord_login');
